@@ -27,51 +27,48 @@ void loop() {
   switch (dir) { // A bit shameful
 
     case 0: //No line detected - Keep going for some time
-     upSpeed(100, 100);
+     upSpeed(80, 80);
     break;
     
     case 1: // Line on the right - Adjust to the right
-    while(digitalRead(2) != HIGH)
-     upSpeed(100, 50);
+    //while(digitalRead(2) != HIGH)
+     upSpeed(100, 20);
     break;
     
     case 2: // Line in the middle - Keep going
-     upSpeed(100, 100);
-     delay(100);
+     upSpeed(80, 80);
+      //delay(50);
     break;
     
     case 3: // Line on both right and mid - Turn right
-     delay(100);
      upSpeed(0, 0);
      while(digitalRead(2) != HIGH)
-       upSpeed(100, -80);
+       upSpeed(100, -50);
      
     break;
     
     case 4: // Line on the left - Adjust to the left
-    while(digitalRead(2) != HIGH)
-     upSpeed(50, 100);
+    //while(digitalRead(2) != HIGH)
+     upSpeed(20, 100);
     break;
     
     case 5: // Line on both right and left - Everything's fine..
-     upSpeed(100, 100);
+     upSpeed(80, 80);
     break;
     
     case 6: // Line on both left and mid - Turn left
-     delay(100);
      upSpeed(0, 0);
      while(digitalRead(2) != HIGH)
-       upSpeed(-80, 100);
+       upSpeed(-50, 100);
     break;
     
     case 7: // Line on left, right and mid - Merry Christmas
-     delay(100);
      upSpeed(0, 0);
      while(digitalRead(2) != HIGH)
-       upSpeed(-80, 100);
+       upSpeed(100, -50);
     break;
   }
-  delay(1);
+ // delay(1);
 }
 
 void upSpeed(int M1, int M2) {
