@@ -31,13 +31,13 @@ void loop() {
     break;
     
     case 1: // Line on the right - Adjust to the right
-    while(digitalRead(2) != HIGH)
-     upSpeed(80, 60);
+    //while(digitalRead(2) != HIGH)
+     upSpeed(100, 20);
     break;
     
     case 2: // Line in the middle - Keep going
      upSpeed(80, 80);
-     delay(80);
+      //delay(50);
     break;
     
     case 3: // Line on both right and mid - Turn right
@@ -48,8 +48,8 @@ void loop() {
     break;
     
     case 4: // Line on the left - Adjust to the left
-    while(digitalRead(2) != HIGH)
-     upSpeed(60, 80);
+    //while(digitalRead(2) != HIGH)
+     upSpeed(20, 100);
     break;
     
     case 5: // Line on both right and left - Everything's fine..
@@ -65,10 +65,10 @@ void loop() {
     case 7: // Line on left, right and mid - Merry Christmas
      upSpeed(0, 0);
      while(digitalRead(2) != HIGH)
-       upSpeed(-50, 100);
+       upSpeed(100, -50);
     break;
   }
-  delay(1);
+ // delay(1);
 }
 
 void upSpeed(int M1, int M2) {
